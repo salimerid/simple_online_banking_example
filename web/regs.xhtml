@@ -1,0 +1,267 @@
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"  
+      xmlns:f="http://java.sun.com/jsf/core"  
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:r="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />			
+            <title>Online Banking</title>
+
+            <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" />
+
+        </f:facet>
+
+        <f:facet name="middle">
+
+            <h:outputStylesheet name="bootstrap/css/bootstrap.css" />
+            <h:outputStylesheet name="css/custom-styles.css" />
+            <h:outputStylesheet name="css/custom.css" />
+            <h:outputStylesheet name="css/font-awesome.css" />
+            <h:outputStylesheet name="css/morris-0.4.3.min.css" />
+
+            <h:outputScript name="js/jquery-1.10.2.js" />
+            <h:outputScript name="js/jquery.metisMenu.js" />
+            <h:outputScript name="bootstrap/js/bootstrap.js" />
+            <h:outputScript name="js/custom-scripts.js" />
+
+        </f:facet>
+
+        <f:facet name="last">
+
+        </f:facet>
+        <script type="text/javascript">
+            //Jquery and css active navigation
+            jQuery(function() {
+                jQuery('.sidemanu li a').each(function() {
+                    if (jQuery(this).attr('href') === window.location.pathname) {
+                        jQuery('.sidemanu li a').removeClass('current');
+                        jQuery(this).addClass('current');
+                    }
+                });
+            });
+
+        </script>
+
+    </h:head>
+    <h:body>
+         <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading ">
+                            <!--Basic Registration Form -->
+                            Account Opening Form
+                        </div>
+                        <div class="panel-body pan">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div id="generalTabContent" class="tab-content">
+                                        <div id="tab-edit" class="tab-pane fade in active">
+
+                                            <h:form enctype="multipart/form-data" id="user_form2" class="form-horizontal">
+
+                                                <h4>General Info.</h4>
+
+                                                <div class="form-group"><label class="col-sm-3 control-label">Name*</label>
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row">
+                                                            <div class="col-xs-9">
+                                                                <h:inputText value="" r:placeholder="Name" class="form-control" required="true" requiredMessage="Please Enter Name."/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group"><label class="col-sm-3 control-label">National ID*</label>
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row">
+                                                            <div class="col-xs-9">
+                                                                <h:inputText value="" r:placeholder="National ID" class="form-control" required="true" requiredMessage="Please Enter National ID."/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group"><label class="col-sm-3 control-label">Occupation*</label>
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row">
+                                                            <div class="col-xs-9">
+                                                                <h:inputText value="" r:placeholder="Occupation" class="form-control" required="true" requiredMessage="Please Enter Occupation."/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group"><label class="col-sm-3 control-label">Gender*</label>
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row"> 
+                                                            <div class="col-xs-4">
+                                                                <h:selectOneMenu class="form-control" value="" >
+                                                                    <f:selectItem itemLabel="Male" itemValue="Male" />
+                                                                    <f:selectItem itemLabel="Female" itemValue="Female" />
+                                                                </h:selectOneMenu>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group"><label class="col-sm-3 control-label">Date Of Birth*</label>
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row">
+                                                            <div class="col-xs-4">
+                                                                <p:calendar />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group"><label class="col-sm-3 control-label">Marital Status</label>
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row"> 
+                                                            <div class="col-xs-4">
+                                                                <h:selectOneMenu class="form-control" value="" >
+                                                                    <f:selectItem itemLabel="Single" itemValue="Single" />
+                                                                    <f:selectItem itemLabel="Married" itemValue="Married" />
+                                                                </h:selectOneMenu>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group"><label class="col-sm-3 control-label">Religion</label>
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row"> 
+                                                            <div class="col-xs-4">
+                                                                <h:selectOneMenu class="form-control" value="" >
+                                                                    <f:selectItem itemLabel="Islam" itemValue="Islam" />  
+                                                                    <f:selectItem itemLabel="Hindu" itemValue="Hindu"/> 
+                                                                    <f:selectItem itemLabel="Buddhist" itemValue="Buddhist"/> 
+                                                                    <f:selectItem itemLabel="Christian" itemValue="Christian"/> 
+                                                                    <f:selectItem itemLabel="Other" itemValue="Other"/>
+                                                                </h:selectOneMenu>                                 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <hr/>
+
+                                                <h4>Contact Info.</h4>
+
+                                                <div class="form-group"><label class="col-sm-3 control-label">Email*</label>
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row">
+                                                            <div class="col-xs-9">
+                                                                <h:inputText value="" r:type="email" r:placeholder="email@yourcompany.com" class="form-control" required="true" requiredMessage="Please Enter Email."/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group"><label class="col-sm-3 control-label">Mobile phone*</label>
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row">
+                                                            <div class="col-xs-9">
+                                                                <h:inputText value="" r:type="text" r:placeholder="mobile phone" class="form-control" required="true" requiredMessage="Please Enter mobile number."/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group"><label class="col-sm-3 control-label">Present Address</label>
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row">
+                                                            <div class="col-xs-9">
+                                                                <h:inputTextarea rows="3" class="form-control" value="" r:placeholder="Present Address" ></h:inputTextarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group"><label class="col-sm-3 control-label">Permanent Address*</label>
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row">
+                                                            <div class="col-xs-9">
+                                                                <h:inputTextarea rows="3" class="form-control" value="" r:placeholder="Permanent Address" required="true" requiredMessage="Please Enter Permanent Address."></h:inputTextarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <hr/>
+
+                                                <h4> Guardian Info.</h4>
+
+                                                <div class="form-group"><label class="col-sm-3 control-label">Father's Name*</label>
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row">
+                                                            <div class="col-xs-9">
+                                                                <h:inputText value="" r:placeholder="Father's Name" class="form-control" required="true" requiredMessage="Please Enter Father's Name."/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group"><label class="col-sm-3 control-label">Mother's Name*</label>
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row">
+                                                            <div class="col-xs-9">
+                                                                <h:inputText value="" r:placeholder="Mother's Name" class="form-control" required="true" requiredMessage="Please Enter Mother's Name."/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr/>
+
+                                                <h4>Account Info.</h4>
+
+                                                <div class="form-group"><label class="col-sm-3 control-label">Type*</label>
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row"> 
+                                                            <div class="col-xs-4">
+                                                                <h:selectOneMenu value="" class="form-control" required="true">
+                                                                    <f:selectItem itemLabel="Deposit" itemValue="Deposit" />
+                                                                    <f:selectItem itemLabel="credit" itemValue="credit" />
+                                                                </h:selectOneMenu>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group"><label class="col-sm-3 control-label">Photos*</label>
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row">
+                                                            <div class="col-xs-9">
+                                                                <p:fileUpload value="" mode="simple" required="true" requiredMessage="Please upload your photo."/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <hr/>
+
+                                                <center>
+                                                    <p:commandButton update="user_form2" actionListener="action" value="Finish" class="btn back-footer-blue btnwidth" ajax="false"></p:commandButton>
+                                                </center>
+
+                                            </h:form>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+    </h:body>
+</html>

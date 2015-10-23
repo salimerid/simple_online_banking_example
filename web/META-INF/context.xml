@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/Online_Banking">
+  <!-- Specify a JDBC datasource -->    
+  <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="100" maxIdle="4" name="jdbc/testdb" password="1234" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/bankdb" username="root"/>
+
+</Context>

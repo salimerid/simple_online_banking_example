@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"  
+      xmlns:ui="http://java.sun.com/jsf/facelets">  
+
+    <ui:composition template="/templates/user/main.xhtml">
+
+        <ui:define name="content">  
+
+            <!--BEGIN BREADCRUMB PAGE-->
+            <div>
+                <ul class="breadcrumb breadcrumb_style">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">All Transaction Report</a>
+                    </li>
+                </ul>
+            </div>
+            <!--END BREADCRUMB PAGE-->
+
+            <h:form id="trans_all_report">
+
+                <p:dataTable value="#{reportController.allTrans_report}" id="all_tbl" var="all_trans_tbl" 
+
+                             paginator="true" rows="14" paginatorPosition="bottom" style="width:auto; margin-top: 8px; margin-bottom: 15px; font-size: 12px;">
+
+                    <p:column sortBy="#{all_trans_tbl.transID}">
+                        <f:facet name="header">TransID</f:facet>  
+
+                        <h:outputText value="#{all_trans_tbl.transID}"/>
+
+                    </p:column> 
+
+                    <p:column sortBy="#{all_trans_tbl.accountFrom}">
+
+                        <f:facet name="header">Transaction From</f:facet>  
+
+                        <h:outputText value="#{all_trans_tbl.accountFrom}"/>
+
+                    </p:column>  
+
+                    <p:column sortBy="#{all_trans_tbl.accountTo}">
+
+                        <f:facet name="header">Transaction To</f:facet>  
+
+                        <h:outputText value="#{all_trans_tbl.accountTo}"/>
+
+                    </p:column>
+
+                    <p:column sortBy="#{all_trans_tbl.amount}">
+
+                        <f:facet name="header">Amount</f:facet>  
+
+                        <h:outputText value="#{all_trans_tbl.amount}"/>
+
+                    </p:column>
+
+                    <p:column sortBy="#{all_trans_tbl.dot}">
+
+                        <f:facet name="header">Date Of Transaction</f:facet>  
+
+                        <h:outputText value="#{all_trans_tbl.dot}"/>
+
+                    </p:column>
+
+                </p:dataTable> 
+                <div style="text-align: left; float: right; margin: 0px; padding: 0px;">
+                    <h:commandLink>
+                        <p:graphicImage id="xls2" value="/images/print/xls.png" width="30"/> 
+                        <p:dataExporter type="xls" target="all_tbl" fileName="transaction_report" />
+                        <p:tooltip for="xls2" value="Download XLS Format" showEffect="clip" hideEffect="explode"/>
+                    </h:commandLink>
+
+                    <h:commandLink>
+                        <p:graphicImage id="pdf2" value="/images/print/pdf.jpg" width="30"/>
+                        <p:dataExporter type="pdf" target="all_tbl" fileName="transaction_report"/>
+                        <p:tooltip for="pdf2" value="Download PDF Format" showEffect="clip" hideEffect="explode"/>
+                    </h:commandLink>
+
+                    <h:commandLink>
+                        <p:graphicImage id="csv2" value="/images/print/csv.jpg" width="30"/>
+                        <p:dataExporter type="csv" target="all_tbl" fileName="transaction_report" />
+                        <p:tooltip id="toolTipGrow" for="csv2" value="Download CSV Format" showEffect="clip" hideEffect="explode"/>
+                    </h:commandLink>
+
+                    <h:commandLink>
+                        <p:graphicImage id="xml2" value="/images/print/xml1.jpg" width="30"/>
+                        <p:dataExporter type="xml" target="all_tbl" fileName="transaction_report"/>
+                        <p:tooltip for="xml2" value="Download XML Format" showEffect="clip" hideEffect="explode"/>
+                    </h:commandLink>
+                </div>
+            </h:form>
+
+        </ui:define>
+
+    </ui:composition>        
+
+</html>   
+
+

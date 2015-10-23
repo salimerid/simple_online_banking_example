@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <ui:composition>
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="width: 340px;" href="/Online_Banking/bank/index.xhtml">Akber Ali Bank</a>
+
+                <div class="navbar-header" style="float: left; margin: 0px; padding: 0px; width: 400px; color: white;">
+
+                </div>
+            </div>
+
+
+            <ul class="nav navbar-top-links navbar-right">
+
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        USER
+                    </a>
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i><span class="hidden-xs">#{loginController.useName}</span><span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="/Online_Banking/bank/user/passChng.xhtml"><i class="fa fa-gear fa-fw"></i> Change Password</a>
+                        </li>
+                        <h:form>
+                            <li class="divider"></li>
+                            <li><i class="fa fa-sign-out fa-fw"/><h:commandLink action="#{logoutController.logout()}" value="Logout"></h:commandLink>
+                            </li>
+                        </h:form>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </nav>
+    </ui:composition>
+</html>
+

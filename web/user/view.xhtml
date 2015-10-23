@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"  
+      xmlns:ui="http://java.sun.com/jsf/facelets">  
+
+    <ui:composition template="/templates/admin/main.xhtml">
+        
+        <ui:define name="content">  
+            
+            <!--BEGIN BREADCRUMB PAGE-->
+            <div>
+                <ul class="breadcrumb breadcrumb_style">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">View</a>
+                    </li>
+                </ul>
+            </div>
+            <!--END BREADCRUMB PAGE-->
+
+            <p:dataTable value="#{userController.user_List}" id="ss" var="user_tbl" 
+
+                         paginator="true" rows="14" paginatorPosition="bottom" style="width:auto; margin-top: 8px; margin-bottom: 15px; font-size: 12px;">
+
+                <p:column sortBy="#{user_tbl.name}">
+
+                    <f:facet name="header">Name</f:facet>  
+
+                    <h:outputText value="#{user_tbl.name}"/>
+
+                </p:column> 
+
+                <p:column sortBy="#{user_tbl.gender}">
+
+                    <f:facet name="header">Gender</f:facet>  
+
+                    <h:outputText value="#{user_tbl.gender}"/>
+
+                </p:column>  
+
+                <p:column sortBy="#{user_tbl.NID}">
+
+                    <f:facet name="header">N_ID</f:facet>  
+
+                    <h:outputText value="#{user_tbl.NID}"/>
+
+                </p:column>
+
+                <p:column sortBy="#{user_tbl.occupation}">
+
+                    <f:facet name="header">Occupation</f:facet>  
+
+                    <h:outputText value="#{user_tbl.occupation}"/>
+
+                </p:column>
+
+                <p:column sortBy="#{user_tbl.phoneNum}">
+
+                    <f:facet name="header">Phone</f:facet>  
+
+                    <h:outputText value="#{user_tbl.phoneNum}"/>
+
+                </p:column>
+
+                <p:column sortBy="#{user_tbl.doa}">
+
+                    <f:facet name="header">Date Of Apps.</f:facet>  
+
+                    <h:outputText value="#{user_tbl.doa}"/>
+
+                </p:column>
+              
+                <p:column style="width:5%">
+                    
+                    <p:commandButton process="@this" update=":view_user_form" onclick="PF('dialog_view_user').show();" icon="ui-icon-pencil" title="Confermation">  
+
+                        <f:setPropertyActionListener value="#{user_tbl}" target="#{userController.user}"/>  
+
+                    </p:commandButton>  
+
+                </p:column>
+
+            </p:dataTable> 
+
+            <p:dialog header="View and Confirmation" showEffect="clip" widgetVar="dialog_view_user" modal="true" height="90%" width="60%">
+                <ui:include src="confermation.xhtml"/>
+            </p:dialog> 
+
+        </ui:define>
+        
+    </ui:composition>        
+
+</html>   
+

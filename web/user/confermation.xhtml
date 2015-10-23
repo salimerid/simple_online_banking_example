@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <h:form id="view_user_form">
+
+            <center>
+
+                <p:panelGrid style="margin-top:20px" id="user_conf_from">
+
+                    <p:row>
+
+                        <p:column style="font-weight: bold; font-size: 14px;"> 
+                            <h:outputText value="User ID "/>
+                        </p:column >
+
+                        <p:column style=" font-weight: bold; font-size: 16px;">
+                            <h:outputText value="#{userController.user.userID}"/>
+                           
+                        </p:column>
+                        
+
+                    </p:row>
+
+                    <p:row>
+
+                        <p:column rowspan="6" style="font-weight: bold;">
+                            <h:graphicImage value="/images/user/#{userController.user.photos}" width="150px" height="160px"/> 
+                        </p:column>
+
+                        <p:column style="font-weight: bold; font-size: 14px;">
+                            <h:outputText value="Name"/>
+                        </p:column>
+
+                        <p:column>
+                            <h:outputText value="#{userController.user.name}"/>
+                        </p:column>
+
+                        <p:column style="font-weight: bold;   font-size: 14px;">
+                            <h:outputText value="Gender"/>
+                        </p:column>
+
+                        <p:column>
+                            <h:outputText value="#{userController.user.gender}"/>
+                        </p:column>
+
+                    </p:row>
+
+
+                    <p:row>
+
+                        <p:column style="font-weight: bold;    font-size: 14px;">
+                            <h:outputText value="Date of Birth"/>
+                        </p:column>
+
+                        <p:column>
+                            <h:outputText value="#{userController.user.dob}"/>
+                        </p:column>
+
+                        <p:column style="font-weight: bold;    font-size: 14px;">
+                            <h:outputText value="Occupation"/>
+                        </p:column>
+
+                        <p:column>
+                            <h:outputText value="#{userController.user.occupation}"/>
+                        </p:column>
+
+                    </p:row>
+
+                    <p:row>
+
+                        <p:column style="font-weight: bold;    font-size: 14px;"> 
+                            <h:outputText value="Marital Status"/>
+                        </p:column>
+
+                        <p:column>
+                            <h:outputText value="#{userController.user.maritalStatus}"/>
+                        </p:column>
+
+                        <p:column style="font-weight: bold;    font-size: 14px;">
+                            <h:outputText value="Religion"/>
+                        </p:column>
+
+                        <p:column>
+                            <h:outputText value="#{userController.user.religion}"/>
+                        </p:column>
+
+                    </p:row>
+
+                    <p:row>
+
+                        <p:column style="font-weight: bold;    font-size: 14px;"> 
+                            <h:outputText value="Father Name"/>
+                        </p:column>
+
+                        <p:column>
+                            <h:outputText value="#{userController.user.fatherName}"/>
+                        </p:column>
+
+                        <p:column style="font-weight: bold;    font-size: 14px;">
+                            <h:outputText value="Mother Name"/>
+                        </p:column>
+
+                        <p:column>
+                            <h:outputText value="#{userController.user.motherName}"/>
+                        </p:column>
+
+                    </p:row>
+
+                    <p:row>
+                        
+                        <p:column  style="font-weight: bold;    font-size: 14px;"> 
+                            <h:outputText value="N_ID"/>
+                        </p:column>
+
+                        <p:column>
+                            <h:outputText value="#{userController.user.NID}"/>
+                        </p:column>
+
+                        <p:column style="font-weight: bold;    font-size: 14px;">
+                            <h:outputText value="Apps. Date"/>
+                        </p:column>
+
+                        <p:column>
+                            <h:outputText value="#{userController.user.doa}"/>
+                        </p:column>
+
+                    </p:row>
+
+                    <p:row>
+                        
+                        <p:column style="font-weight: bold;    font-size: 14px;"> 
+                            <h:outputText value="Account Type"/>
+                        </p:column>
+
+                        <p:column>
+                            <h:outputText value="#{userController.user.accountType}"/>
+                        </p:column>
+
+                        <p:column style="font-weight: bold;    font-size: 14px;">
+                            <h:outputText value="Account Number"/>
+                        </p:column>
+
+                        <p:column>
+                            <h:outputText value="#{userController.user.accountNumber}"/>
+                        </p:column>
+
+                    </p:row>
+
+                </p:panelGrid>
+
+
+                <p:panelGrid style="margin-top:20px; margin-bottom: 20px;" id="contact_info">
+
+                    <p:row>
+                        
+                        <p:column style="font-weight: bold; font-size: 14px;"> 
+                            <h:outputText value="Contact info."/>
+                        </p:column>
+
+                    </p:row>
+
+                    <p:row>
+
+                        <p:column style="font-weight: bold;    font-size: 14px;"> 
+                            <h:outputText value="Phone"/>
+                        </p:column>
+
+                        <p:column>
+                            <h:outputText value="#{userController.user.phoneNum}"/>
+                        </p:column>
+
+                        <p:column style="font-weight: bold;    font-size: 14px;">
+                            <h:outputText value="Email"/>
+                        </p:column>
+
+                        <p:column>
+                            <h:outputText value="#{userController.user.email}"/>
+                        </p:column>
+
+                    </p:row>
+
+                    <p:row>
+
+                        <p:column  style="font-weight: bold; font-size: 14px;"> 
+                            <h:outputText value="Present Address"/>
+                        </p:column>
+
+                        <p:column>
+                            <h:outputText value="#{userController.user.presentAddress}"/>
+                        </p:column>
+
+                        <p:column style="font-weight: bold; font-size: 14px;">
+                            <h:outputText value="Permanent Address "/>
+                        </p:column>
+
+                        <p:column>
+                            <h:outputText value="#{userController.user.permanentAddress}"/>
+                        </p:column>
+
+                    </p:row>
+
+                </p:panelGrid>
+
+                <p:commandButton value="Accept" update="view_user_form" onclick="PF('dialog_view_user').hiden();" actionListener="#{userController.acceptUser(userController.user.accountNumber, userController.user.userID)}" icon="ui-icon-check"/>
+                        <p:spacer width="20"/>
+                <p:commandButton value="Reject" update="view_user_form" onclick="PF('dialog_view_user').hiden();" actionListener="#{userController.rejectUser(userController.user.accountNumber, userController.user.userID)}" icon="ui-icon-closethick"/>
+
+            </center>
+
+        </h:form>
+
+    </ui:composition>
+</html>
+
+

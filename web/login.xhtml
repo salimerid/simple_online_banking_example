@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:r="http://xmlns.jcp.org/jsf/passthrough">
+
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />			
+            <title>Online Banking</title>
+
+            <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" />
+
+        </f:facet>
+
+        <f:facet name="middle">
+
+            <h:outputStylesheet name="bootstrap/css/bootstrap.css" />
+            <h:outputStylesheet name="css/custom-styles.css" />
+            <h:outputStylesheet name="css/custom.css" />
+            <h:outputStylesheet name="css/font-awesome.css" />
+            <h:outputStylesheet name="css/morris-0.4.3.min.css" />
+
+            <h:outputScript name="js/jquery-1.10.2.js" />
+            <h:outputScript name="js/jquery.metisMenu.js" />
+            <h:outputScript name="bootstrap/js/bootstrap.js" />
+            <h:outputScript name="js/custom-scripts.js" />
+
+        </f:facet>
+
+        <f:facet name="last">
+
+        </f:facet>
+
+
+    </h:head>
+
+    <h:body>
+        <div class="wrapper">
+            <div class="row">
+                <center>
+                    <div class="col-md-12 center login-header">
+                        <h2>Welcome to Akber Ali Bank</h2>
+                    </div>
+                </center>
+            </div>
+            <div style="margin: 40px auto; width: 35%; " class="well login-box">
+                <div class="alert alert-info">
+                    Please login with your Username and Password.
+                </div>
+                  <p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />
+                <h:form id="login_form">
+                    <fieldset>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
+                            <h:inputText class="form-control" value="#{loginController.system_user.userName}" required="true" requiredMessage="Please enter valid Username." r:placeholder="Username"/>
+                        </div>
+                        <div class="clearfix"></div><br/>
+
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock red"></i></span>
+                            <h:inputSecret class="form-control" value="#{loginController.system_user.password}" required="true" requiredMessage="Please enter valid password." r:placeholder="Password"/>
+                        </div>
+                        <div class="clearfix"></div><br/>
+
+
+                        <div class="input-prepend">
+                            <label class="remember" for="remember"><input type="checkbox" id="remember"/> Remember me</label>
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <p class="center col-md-5">
+                            <h:commandButton value="Login" action="#{loginController.checkLogin}" class="btn btn-primary"/>
+
+                        </p>
+                    </fieldset>
+                </h:form>
+
+                <!--/span-->
+            </div>
+
+        </div> <!-- /container -->
+    </h:body>
+
+</html>
+
+
+
+

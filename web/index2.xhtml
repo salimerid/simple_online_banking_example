@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"  
+      xmlns:f="http://java.sun.com/jsf/core"  
+      xmlns:ui="http://java.sun.com/jsf/facelets">  
+
+    <ui:composition template="/templates/default/main.xhtml">
+        <ui:define name="content">  
+            <!--BEGIN BREADCRUMB PAGE-->
+            <div>
+                <ul class="breadcrumb breadcrumb_style">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+            <!--END BREADCRUMB PAGE-->
+
+            <div class="row">
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="panel panel-primary text-center no-boder bg-color-green">
+                        <div class="panel-body">
+                            <i class="fa fa-bar-chart-o fa-5x"></i>
+                            <h3>8,457</h3>
+                        </div>
+                        <div class="panel-footer back-footer-green">
+                            Daily Visits
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="panel panel-primary text-center no-boder bg-color-blue">
+                        <div class="panel-body">
+                            <i class="glyphicon glyphicon-retweet fa-5x"></i>
+                            <h3>1,160 </h3>
+                        </div>
+                        <div class="panel-footer back-footer-blue">
+                            Daily Transaction
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="panel panel-primary text-center no-boder bg-color-red">
+                        <div class="panel-body">
+                            <i class="glyphicon glyphicon-user fa-5x"></i>
+                            <center>
+                            <h3><h:dataTable var="pending" value="#{userController.notifationList}">
+                                <h:column>#{pending.inActiveUserCount}</h:column>
+                            </h:dataTable></h3></center>
+                        </div>
+                        <div class="panel-footer back-footer-red">
+                            Pending User
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="panel panel-primary text-center no-boder bg-color-brown">
+                        <div class="panel-body">
+                            <i class="fa fa-users fa-5x"></i>
+                            <center>
+                                <h3><h:dataTable var="active" value="#{userController.activeUserList}">
+                                        <h:column>#{active.activeUser}</h:column>
+                            </h:dataTable></h3></center>
+                        </div>
+                        <div class="panel-footer back-footer-brown">
+                            Active User
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                
+                <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                           Transaction Bar Chart
+                        </div>
+                        <div class="panel-body">
+                            <div id="morris-bar-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Transaction Donut Chart
+                        </div>
+                        <div class="panel-body">
+                            <div id="morris-donut-chart"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </ui:define>
+    </ui:composition>        
+
+</html>   
+
