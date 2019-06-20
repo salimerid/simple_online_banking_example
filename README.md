@@ -1,4 +1,4 @@
-#JSF Simple Online Banking example using JSF, Primefaces, Bootstrap
+# JSF Simple Online Banking example using JSF, Primefaces, Bootstrap
 
 ### What's inside
 
